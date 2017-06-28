@@ -6,10 +6,10 @@
   "author": "Casey Banner <kcbanner@gmail.com>",
   "repository": {
       "type": "git",
-      "url": "https://ci.open-paas.org/stash/scm/or/awesome-sessionstore.git"
+      "url": "https://ci.linagora.com/linagora/lgs/openpaas/awesome-sessionstore.git"
   },
   "bugs": {
-      "url": "https://ci.open-paas.org/stash/scm/or/awesome-sessionstore.git"
+      "url": "https://ci.linagora.com/linagora/lgs/openpaas/awesome-sessionstore/issues"
   },
   "directories": {
       "lib":"./lib"
