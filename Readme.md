@@ -1,16 +1,14 @@
-# connect-mongo
+# awesome-sessionstore
 
   MongoDB session store for Connect
 
-  [![Build Status](https://secure.travis-ci.org/kcbanner/connect-mongo.png?branch=master)](http://travis-ci.org/kcbanner/connect-mongo)
-
 ## Installation
 
-connect-mongo supports only connect `>= 1.0.3`.
+awesome-sessionstore supports only connect `>= 1.0.3`.
 
 via npm:
 
-    $ npm install connect-mongo
+    $ npm install @linagora/awesome-sessionstore
 
 ## Options
 
@@ -25,7 +23,7 @@ via npm:
   - `url` Connection url of the form: `mongodb://user:pass@host:port/database/collection`.
           If provided, information in the URL takes priority over the other options.
   - `mongoose_connection` in the form: `someMongooseDb.connections[0]` to use an existing mongoose connection. (optional)
-  - `stringify` If true, connect-mongo will serialize sessions using `JSON.stringify` before
+  - `stringify` If true, awesome-sessionstore will serialize sessions using `JSON.stringify` before
                 setting them, and deserialize them with `JSON.parse` when getting them.
                 (optional, default: true). This is useful if you are using types that 
                 MongoDB doesn't support.
@@ -39,7 +37,7 @@ starting your app.
 With express:
 
     var express = require('express');
-    var MongoStore = require('connect-mongo')(express);
+    var MongoStore = require('awesome-sessionstore')(express);
 
     app.use(express.session({
         secret: settings.cookie_secret,
@@ -51,17 +49,17 @@ With express:
 With connect:
 
     var connect = require('connect');
-    var MongoStore = require('connect-mongo')(connect);
+    var MongoStore = require('awesome-sessionstore')(connect);
 
 ## Removing expired sessions
 
-  connect-mongo uses MongoDB's TTL collection feature (2.2+) to
+  awesome-sessionstore uses MongoDB's TTL collection feature (2.2+) to
   have mongod automatically remove expired sessions. (mongod runs this
   check every minute.)
 
   **Note:** By connect/express's default, session cookies are set to 
   expire when the user closes their browser (maxAge: null). In accordance
-  with standard industry practices, connect-mongo will set these sessions
+  with standard industry practices, awesome-sessionstore will set these sessions
   to expire two weeks from their last 'set'. You can override this 
   behavior by manually setting the maxAge for your cookies -- just keep in
   mind that any value less than 60 seconds is pointless, as mongod will
