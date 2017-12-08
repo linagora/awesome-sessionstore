@@ -1,5 +1,5 @@
 {
-  "name": "@linagora/awesome-sessionstore",
+  "name": "awesome-sessionstore",
   "version": "0.1.0",
   "description": "MongoDB session store for Connect",
   "keywords": ["connect", "mongo", "mongodb", "session", "express"],
